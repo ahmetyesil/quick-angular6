@@ -9,5 +9,13 @@
   "exclude": [
     "test.ts",
     "**/*.spec.ts"
-  ]
+  ],
+  "include": [
+    "../node_modules/bng-angular-base",
+    "../node_modules/nglinq",
+    "../node_modules/ngrepeat",
+    "../node_modules/ngrepeat/repeat.module.ts",
+    "main.ts",
+    "polyfills.ts"
+  ],
 }

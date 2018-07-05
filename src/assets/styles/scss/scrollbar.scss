@@ -1,0 +1,19 @@
+
+.mCSB_inside > .mCSB_container {
+  margin-right: 0px !important;
+}
+
+.mCS-light-thick.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, .mCS-dark-thick.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background-color: #1a1b21 !important;
+}
+
+.mCSB_container_wrapper {
+  &.mCS_no_scrollbar_x.mCS_x_hidden > .mCSB_container {
+    padding-right: 0 !important;
+  }
+  margin-right: 0px !important;
+}
+
+.mCSB_scrollTools {
+  width: 7px !important;
+}

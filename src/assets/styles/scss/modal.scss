@@ -1,0 +1,82 @@
+// Modal **************************
+.modal-backdrop {
+  background-color: #000;
+}
+
+.modal{
+  background-color: rgba(22, 23, 29, 0.7) !important;
+  .modal-dialog{margin-top:66px !important;}
+  .modal-content{
+    background-color:#1a1b21;
+    border-radius:0px;
+    padding: 10px;
+    .btn-danger,.btn-warning {
+      color: white !important;
+    }
+    .modal-header{
+      text-align: center;
+      border-bottom:none;
+      h4{
+        color:$color_white;
+        font-size:25px;
+        font-weight:600;
+      }
+      .close{
+        color:white;
+        opacity: 0.9;
+        font-size: 20px !important;
+        font-weight: normal;
+        z-index: 9;
+        position: absolute;
+        right: 27px;
+      }
+      a {
+
+      }
+    }
+    .modal-body{
+      padding-left: 40px;
+      padding-right:40px;
+      padding-bottom:50px;
+      .fa-exclamation-triangle{
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+      p,label{
+        font-size: 13px;
+        font-weight: normal;
+        line-height: 25px;
+        display: inline;
+        color:$color_white;
+
+      }
+      .sms_activation_form{
+
+        .form_validation_message{
+          top: 40px !important;
+          left: 0px !important;
+        }
+      }
+      .modal-links{
+        margin-top: 15px;
+        a{
+          color:$color_white !important;
+          text-decoration: none;
+          margin-right: 10px;
+          &:hover,&:focus,&:active {
+            color:$color_white;
+          }
+        }
+      }
+      .popup_modal_content{
+        margin-bottom:30px;
+        color:$color_white;
+      }
+    }
+  }
+  .table{
+    background-color: $color_darkblue;
+  }
+}
+
+// Modal ************************** END

@@ -1,0 +1,8 @@
+@import "variable";
+
+.gradient-pink{
+  background: #e04952;
+  background: -moz-linear-gradient(left, #e04952 0%, #d03b63 32%, #a91a86 65%, #91079a 100%);
+  background: -webkit-linear-gradient(left, #e04952 0%, #d03b63 32%, #a91a86 65%, #91079a 100%);
+  background: linear-gradient(to right, #e04952 0%, #d03b63 32%, #a91a86 65%, #91079a 100%);
+}

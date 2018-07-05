@@ -4,5 +4,10 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+    production: false,
+    base_uri: 'http://api.v216.net',
+    panel_uri: 'http://beta.v216.net',
+    // base_uri: 'http://beta-api.v216.net',
+    // socket_uri: 'http://beta-api.v216.net/ws'
+    socket_uri: 'http://localhost:8888'
 };

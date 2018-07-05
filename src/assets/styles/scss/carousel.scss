@@ -1,0 +1,23 @@
+.owl-carousel {
+  .owl-dots{
+    bottom: 15px;
+    right: 5px;
+    margin-right: 15px;
+    position: absolute;
+  }
+  .owl-nav{
+    position: absolute;
+    top:-60px;
+    right:0px;
+    //[class*=owl-]{
+    //  float: right;
+    //}
+    .owl-prev,.owl-next,.owl-prev:hover,.owl-next:hover{
+      background-color: transparent !important;
+      color:gray;
+    }
+
+  }
+
+}
+
