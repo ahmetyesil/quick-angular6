@@ -35,8 +35,7 @@
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/owl.carousel/dist/owl.carousel.min.js",
               "node_modules/tether/dist/js/tether.min.js",
-              "node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js",
-
+              "node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"
             ]
           },
           "configurations": {
@@ -143,7 +142,7 @@
       }
     }
   },
-  "defaultProject": "angular6-test",
+  "defaultProject": "quick-angular6",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
