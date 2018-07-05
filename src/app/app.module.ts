@@ -5,6 +5,8 @@ import {AppComponent} from './app.component';
 import {HttpClient} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {ROUTES} from './app.routing';
+import {RouterModule} from '@angular/router';
 
 export function generateTranslateStaticLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n', '.json');
@@ -16,6 +18,7 @@ export function generateTranslateStaticLoader(http: HttpClient) {
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(ROUTES),
     BNGModule,
     TranslateModule.forRoot({
       loader: {
