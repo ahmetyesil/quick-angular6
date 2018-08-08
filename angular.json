@@ -1,42 +1,36 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "$schema": "./node_modules/@angular-devkit/core/src/workspace/workspace-schema.json",
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular6-test": {
+    "angular.io-example": {
       "root": "",
-      "sourceRoot": "src",
       "projectType": "application",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist",
+            "outputPath": "dist/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "tsConfig": "src/tsconfig.app.json",
             "polyfills": "src/polyfills.ts",
             "assets": [
-              "src/assets",
-              "src/favicon.ico"
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "/assets"
+              },
+              {
+                "glob": "favicon.ico",
+                "input": "src",
+                "output": "/"
+              }
             ],
             "styles": [
-              "node_modules/font-awesome/css/font-awesome.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/animate.css/animate.min.css",
-              "node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
-              "node_modules/owl.carousel/dist/assets/owl.theme.default.min.css",
-              "node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css",
-              "node_modules/ngx-toastr/toastr.css",
-              "src/assets/styles/scss/style.scss"
+              "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "node_modules/owl.carousel/dist/owl.carousel.min.js",
-              "node_modules/tether/dist/js/tether.min.js",
-              "node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -61,18 +55,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular6-test:build"
+            "browserTarget": "angular.io-example:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular6-test:build:production"
+              "browserTarget": "angular.io-example:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular6-test:build"
+            "browserTarget": "angular.io-example:build"
           }
         },
         "test": {
@@ -82,27 +76,21 @@
             "karmaConfig": "./karma.conf.js",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
-            "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "node_modules/owl.carousel/dist/owl.carousel.min.js",
-              "node_modules/tether/dist/js/tether.min.js",
-              "node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js",
-              "assets/styles/scss/style.scss"
-            ],
+            "scripts": [],
             "styles": [
-              "node_modules/font-awesome/css/font-awesome.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/animate.css/animate.min.css",
-              "node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
-              "node_modules/owl.carousel/dist/assets/owl.theme.default.min.css",
-              "node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css",
-              "src/assets/scss/style.scss",
-              "node_modules/ng2-toastr/bundles/ng2-toastr.min.css"
+              "src/styles.css"
             ],
             "assets": [
-              "src/assets",
-              "src/favicon.ico"
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "/assets"
+              },
+              {
+                "glob": "favicon.ico",
+                "input": "src",
+                "output": "/"
+              }
             ]
           }
         },
@@ -113,21 +101,32 @@
               "src/tsconfig.app.json",
               "src/tsconfig.spec.json"
             ],
-            "exclude": []
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/server",
+            "main": "src/main.server.ts",
+            "tsConfig": "src/tsconfig.server.json"
           }
         }
       }
     },
-    "angular6-test-e2e": {
+    "angular.io-example-e2e": {
       "root": "",
-      "sourceRoot": "e2e",
       "projectType": "application",
+      "cli": {},
+      "schematics": {},
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "angular6-test:serve"
+            "devServerTarget": "angular.io-example:serve"
           }
         },
         "lint": {
@@ -136,13 +135,15 @@
             "tsConfig": [
               "e2e/tsconfig.e2e.json"
             ],
-            "exclude": []
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
     }
   },
-  "defaultProject": "quick-angular6",
+  "cli": {},
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
